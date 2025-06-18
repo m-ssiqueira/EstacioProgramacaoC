@@ -1,5 +1,6 @@
 // exercicio de decisoes encadeadas. 
 
+/* EXERCICIO 1
 #include <stdio.h>
     int main(){
 
@@ -17,5 +18,31 @@
         }else {
             printf("Você é uma criança !\n");
         }
+        return 0;
+    }
+*/
+
+// EXERCICIO 2
+
+#include <stdio.h>
+    int main(){
+
+        int nota;
+        
+        printf("Digite sua nota: ");
+        scanf("%d", &nota);
+
+        if (nota<60){
+            printf("Conceito F \n");
+        }else if(nota<70){
+            printf("Conceito D \n");
+        }else if(nota<80){
+            printf("Conceito C\n");
+        }else if(nota<90){
+            printf("Conceito B\n");
+        }else{
+            printf("Conceito A \n");
+        }
+
         return 0;
     }
