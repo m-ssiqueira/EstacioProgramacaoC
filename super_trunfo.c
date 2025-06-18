@@ -152,19 +152,19 @@ _ppc    = pib_per_capta01 > pib_per_capta02;
 
     if (populacao01 > populacao02){
         printf ("O numero de habitantes na cidade %s é maior\n", nome_cidade01);
-    } else{
+    }else{
         printf("O numero de habitantes na cidade %s é maior\n", nome_cidade02);
     }
 
     if (area01 > area02){
         printf("%s é a maior cidade\n", nome_cidade01);
-        }else {
+    }else {
             printf("%s é a maior cidade\n", nome_cidade02);
         }
     
     if (pib01 > pib02){
         printf("O PIB de %s é maior.\n", nome_cidade01);
-    } else{
+    }else{
         printf("O PIB de %s é maior.\n", nome_cidade02);
     }
 
@@ -192,4 +192,5 @@ _ppc    = pib_per_capta01 > pib_per_capta02;
         printf("%s é mais poderoso.\n", nome_cidade02);
     }
 
-    return 0;}
+    return 0;
+}
