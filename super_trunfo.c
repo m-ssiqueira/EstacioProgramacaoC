@@ -89,14 +89,7 @@ int main(){
     sp01 = (float) populacao01 + area01 + pib01 + turismo01 + pib_per_capta01 - densidade_demografica01;
     sp02 = (float) populacao02 + area02 + pib02 + turismo02 + pib_per_capta02 - densidade_demografica02;
 
-// comparando as cartas
 
-_pop    = populacao01 > populacao02;
-_area   = area01 > area02;
-_pib    = pib01 > pib02;
-_tur    = turismo01 > turismo02;
-_depo   = densidade_demografica01 < densidade_demografica02;
-_ppc    = pib_per_capta01 > pib_per_capta02;
 
 //imprimindo dados das cartas
     printf("\n\n------------------------------------------- \n\n");
@@ -131,16 +124,72 @@ _ppc    = pib_per_capta01 > pib_per_capta02;
 
     printf("------------------------------------------- \n\n");
 
-// imprimindo o comparativo onde 1 é vitória pra carta 1 e 0 é vitória pra carta 2
-    printf("---------------------\n");
-    printf("--== COMPARATIVO ==--\n");
-    printf("---------------------\n");
+// comparando as cartas 
+
+/*
+Solução do primeiro exercicio usando apenas verdadero ou falso
+_pop    = populacao01 > populacao02;
+_area   = area01 > area02;
+_pib    = pib01 > pib02;
+_tur    = turismo01 > turismo02;
+_depo   = densidade_demografica01 < densidade_demografica02;
+_ppc    = pib_per_capta01 > pib_per_capta02;   
+
     printf("População : %d\n", _pop);
     printf("Área : %d\n", _area);
     printf("PIB : %d\n", _pib);
     printf("Turismo : %d\n", _tur);
     printf("Densidade Demográfica : %d\n", _depo);
     printf("PIB per Capta: %d\n\n", _ppc);
+*/
 
-    return 0;
-}
+
+    printf("---------------------\n");
+    printf("--== COMPARATIVO ==--\n");
+    printf("---------------------\n");
+
+// implementação do IF ELSE no comparativo e imprimindo a mensagem.
+
+    if (populacao01 > populacao02){
+        printf ("O numero de habitantes na cidade %s é maior\n", nome_cidade01);
+    } else{
+        printf("O numero de habitantes na cidade %s é maior\n", nome_cidade02);
+    }
+
+    if (area01 > area02){
+        printf("%s é a maior cidade\n", nome_cidade01);
+        }else {
+            printf("%s é a maior cidade\n", nome_cidade02);
+        }
+    
+    if (pib01 > pib02){
+        printf("O PIB de %s é maior.\n", nome_cidade01);
+    } else{
+        printf("O PIB de %s é maior.\n", nome_cidade02);
+    }
+
+    if (turismo01 > turismo02){
+        printf("%s tem mais pontos turisticos.\n", nome_cidade01);
+    }else{
+        printf("%s tem mais pontos turisticos.\n", nome_cidade02);
+    }
+
+    if (densidade_demografica01 < densidade_demografica02){
+        printf("%s tem uma maior area por habitante.\n", nome_cidade01);
+    }else{
+        printf("%s tem uma maior area por habitante.\n", nome_cidade02);
+    }
+
+    if (pib_per_capta01 > pib_per_capta02){
+        printf("O PIB per Capta de %s é maior\n", nome_cidade01);
+    }else{
+        printf("O PIB per Capta de %s é maior\n", nome_cidade02);
+    }
+
+    if(sp01 > sp02){
+        printf("%s é mais poderoso.\n", nome_cidade01);
+    }else{
+        printf("%s é mais poderoso.\n", nome_cidade02);
+    }
+
+    return 0;}
