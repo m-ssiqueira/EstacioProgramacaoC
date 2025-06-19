@@ -3,28 +3,29 @@
 int main(){
 
 // entrada da carta 01
-    char estado01;
-    char codigo_carta01[4];
-    char nome_cidade01[20];
-    unsigned int  populacao01;
-    float pib01, area01, densidade_demografica01;
+    char estado01 = 'A';
+    char codigo_carta01[4] = "A01";
+    char nome_cidade01[20] = "São Paulo\n";
+    unsigned int  populacao01 = 12325000;
+    float pib01 = 699.28, area01 = 1521.11, densidade_demografica01;
     double sp01, pib_per_capta01;
-    int turismo01;
+    int turismo01 = 50;
 
-    // entrada da carta 2
-    char estado02;
-    char codigo_carta02[4];
-    char nome_cidade02[20];
-    unsigned int populacao02;
-    float area02, pib02, densidade_demografica02;
+// entrada da carta 2
+    char estado02 = 'B';
+    char codigo_carta02[4] = "B02";
+    char nome_cidade02[20] = "Rio de Janeiro\n";
+    unsigned int populacao02 = 6748000;
+    float area02 = 1200.25, pib02 = 300.50, densidade_demografica02;
     double sp02, pib_per_capta02;
-    int turismo02;
-// variaveis de comparação:
+    int turismo02 = 30;
 
-    short int _pop, _area, _pib, _tur, _depo, _ppc;
+// eu fixei os valores das variaveis para agilizar os testes
+
 
 
 // inserindo dados da primeira carta
+/*
     printf("Iniciando cadastro da primeira carta.\n");
     printf("------------------------------------\n");
 
@@ -77,6 +78,9 @@ int main(){
     printf("Digite a quantidade que pontos turísticos:");
     scanf("%d", &turismo02);
 
+*/
+// definindo dados das cartas
+
 // calculando
     
     densidade_demografica01 =(float) populacao01 / area01;
@@ -127,14 +131,17 @@ int main(){
 // comparando as cartas 
 
 /*
-Solução do primeiro exercicio usando apenas verdadero ou falso
+//Solução do primeiro exercicio usando apenas verdadero ou falso
+// variaveis de comparação:
+short int _pop, _area, _pib, _tur, _depo, _ppc;
+// condição
 _pop    = populacao01 > populacao02;
 _area   = area01 > area02;
 _pib    = pib01 > pib02;
 _tur    = turismo01 > turismo02;
 _depo   = densidade_demografica01 < densidade_demografica02;
 _ppc    = pib_per_capta01 > pib_per_capta02;   
-
+// print
     printf("População : %d\n", _pop);
     printf("Área : %d\n", _area);
     printf("PIB : %d\n", _pib);
@@ -143,13 +150,12 @@ _ppc    = pib_per_capta01 > pib_per_capta02;
     printf("PIB per Capta: %d\n\n", _ppc);
 */
 
-
     printf("---------------------\n");
     printf("--== COMPARATIVO ==--\n");
     printf("---------------------\n");
 
-// implementação do IF ELSE no comparativo e imprimindo a mensagem.
-
+// implementação do IF ELSE no comparativo e imprimindo a mensagem. segunda parte do exercicio
+/*
     if (populacao01 > populacao02){
         printf ("O numero de habitantes na cidade %s é maior\n", nome_cidade01);
     }else{
@@ -191,6 +197,82 @@ _ppc    = pib_per_capta01 > pib_per_capta02;
     }else{
         printf("%s é mais poderoso.\n", nome_cidade02);
     }
+*/
+
+// solução usando SWITCH para fazer um menu comparativo
+int opcao;
+    printf("Escolha uma opição de comparação:\n");
+    printf("1 - População.\n");
+    printf("2 - Área.\n");
+    printf("3 - PIB.\n");
+    printf("4 - Pontos Turisticos.\n");
+    printf("5 - Densidade Demografica.\n");
+    printf("6 - PIB per Capta.\n");
+    printf("7 - Super Poder.\n");
+    printf("Escolha : ");
+    scanf("%d", &opcao);
+
+    switch(opcao){
+        case 1:
+            if (populacao01 > populacao02){
+                printf("O Vencedor com maior número de POPULAÇÃO é %s ", nome_cidade01);
+                printf("Com total de %u habitantes contra %u habitantes de %s", populacao01, populacao02, nome_cidade02);
+            }else{
+                printf("O Vencedor com maior número de POPULAÇÃO é %s ", nome_cidade02);
+                printf("Com total de %u habitantes contra %u habitantes de %s", populacao02, populacao01, nome_cidade01);
+            }break;
+        case 2:
+            if (area01 > area02){
+                printf("O Vencedor com a maior ÁREA é %s ", nome_cidade01);
+                printf("Com total de %.2fkm² contra %.2fkm² de %s", area01, area02, nome_cidade02);
+            }else{
+                printf("O Vencedor com a maior ÁREA é %s", nome_cidade02);
+                printf("Com total de %.2fkm² contra %.2fkm² de %s", area02, area01, nome_cidade01);
+            }break;
+        case 3:
+            if (pib01 > pib02){
+                printf("O Vencedor com  o maior PIB é %s ", nome_cidade01);
+                printf("Com total de R$%.2f Bilhões contra R$%.2f Bilhões de %s", pib01, pib02, nome_cidade02);
+            }else{
+                printf("O Vencedor com  o maior PIB é %s ", nome_cidade02);
+                printf("Com total de R$%.2f Bilhões contra R$%.2f Bilhões de %s", pib02, pib01, nome_cidade01);
+            }break;
+        case 4:
+            if (turismo01 > turismo02){
+                printf("O Vencedor com maior número de PONTOS TURÍSTICOS é %s ", nome_cidade01);
+                printf("Com total de %d pontos turísticos contra %d de %s", turismo01, turismo02, nome_cidade02);
+            }else{
+                printf("O Vencedor com maior número de PONTOS TURÍSTICOS é %s ", nome_cidade02);
+                printf("Com total de %d pontos turísticos contra %d de %s", turismo02, turismo01, nome_cidade01);
+            }break;
+        case 5:
+            if (densidade_demografica01 < densidade_demografica02){
+                printf("O Vencedor com a menor DENSIDADE DEMOGRÁFICA é %s ", nome_cidade01);
+                printf("Com total de %.2f hab/km² contra %.2f hab/km² de %s", densidade_demografica01, densidade_demografica02, nome_cidade02);
+            }else{
+                printf("O Vencedor com a menor DENSIDADE DEMOGRÁFICA é %s ", nome_cidade02);
+                printf("Com total de %.2f hab/km² contra %.2f hab/km² de %s", densidade_demografica02, densidade_demografica01, nome_cidade01);
+            }break;
+        case 6:
+            if (pib_per_capta01 > pib_per_capta02){
+                printf("O Vencedor com maior PIB per Capta é %s ", nome_cidade01);
+                printf("Com total de R$%.2f contra R$%.2f de %s", pib_per_capta01, pib_per_capta02, nome_cidade02);
+            }else{
+                printf("O Vencedor com maior PIB per Capta é %s ", nome_cidade02);
+                printf("Com total de R$%.2f contra R$%.2f de %s", pib_per_capta02, pib_per_capta01, nome_cidade01);
+            }break;
+        case 7:
+            if(sp01 > sp02){
+                printf("O Vencedor com uma carga de %f de SUPER PODER é %s",sp01, nome_cidade01);
+                printf("Contra %.2f de %s", sp02 ,nome_cidade02);
+            }else{
+                printf("O Vencedor com uma carga de %.2f de SUPER PODER é %s",sp02, nome_cidade02);
+                printf("Contra %.2f de %s", sp01 ,nome_cidade01);
+            }break;
+        default:
+            printf("Opção Inválida\n");
+            
+        }
 
     return 0;
 }
