@@ -79,10 +79,9 @@ int main(){
     scanf("%d", &turismo02);
 
 */
-// definindo dados das cartas
+
 
 // calculando
-    
     densidade_demografica01 =(float) populacao01 / area01;
     pib_per_capta01 =(float) (pib01*1e9) / populacao01;
 
@@ -93,10 +92,7 @@ int main(){
     sp01 = (float) populacao01 + area01 + pib01 + turismo01 + pib_per_capta01 - densidade_demografica01;
     sp02 = (float) populacao02 + area02 + pib02 + turismo02 + pib_per_capta02 - densidade_demografica02;
 
-
-
 //imprimindo dados das cartas
-    printf("\n\n------------------------------------------- \n\n");
     printf("-------------- \n");
     printf("-= CARTA 01 =- \n");
     printf("-------------- \n");
@@ -109,9 +105,8 @@ int main(){
     printf("%d Pontos Turisticos\n", turismo01);
     printf("Densidade demografica de %.2f habitantes por km²\n", densidade_demografica01);
     printf("PIB per capta de R$%.2f\n", pib_per_capta01);
-    printf("Seu Super Poder é calculado em %.2f\n\n", sp01);
+    printf("Seu Super Poder é calculado em %.2f\n", sp01);
 
-    printf("------------------------------------------- \n\n");
     printf("-------------- \n");
     printf("-= CARTA 02 =- \n");
     printf("-------------- \n");
@@ -124,7 +119,7 @@ int main(){
     printf("%d Pontos Turisticos\n", turismo02);
     printf("Densidade demografica de %.2f habitantes por km²\n", densidade_demografica02);
     printf("PIB per capta de R$%.2f\n", pib_per_capta02);
-    printf("Seu Super Poder é calculado em %.2f\n\n", sp02);
+    printf("Seu Super Poder é calculado em %.2f\n", sp02);
 
     printf("------------------------------------------- \n\n");
 
@@ -141,7 +136,7 @@ _pib    = pib01 > pib02;
 _tur    = turismo01 > turismo02;
 _depo   = densidade_demografica01 < densidade_demografica02;
 _ppc    = pib_per_capta01 > pib_per_capta02;   
-// print
+// print******** perdi essa linha sem querer.
     printf("População : %d\n", _pop);
     printf("Área : %d\n", _area);
     printf("PIB : %d\n", _pib);
