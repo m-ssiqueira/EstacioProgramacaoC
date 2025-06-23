@@ -1,5 +1,5 @@
 /*
- - = WHILE = -
+ - = WHILE = - imprime os números pares até 10
 #include <stdio.h>
 
 int main (){
@@ -21,7 +21,7 @@ int main (){
 */
 
 /*
- - = DO WHILE = -
+ - = DO WHILE = - Espera a entrada de um número PAR pra sair do programa
 #include <stdio.h>
 
 int main(){
@@ -43,7 +43,7 @@ int main(){
     return 0;
 }
 */
-
+// - = FOR = - tabuada
 #include <stdio.h>
 
 int main(){
