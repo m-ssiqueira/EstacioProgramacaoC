@@ -30,7 +30,7 @@ int main(){
                 scanf("%d", &move);
                     if (move < 8){    
                         for (int i=0;i < move; i++){
-                            printf("Frente , %c,%d.\n", ++posX, posY);
+                            printf("Frente , %c,%d.\n", posX, ++posY);
                         }
                     }else {
                         printf("Opção invalida.\n");
@@ -67,7 +67,7 @@ int main(){
                 break;
 
                 case 4:
-                // considerando o cavalo começando na posição a,1 e ela podendo mover em L , duas vezes pra cima e uma vez pra direita                     
+                // considerando o cavalo começando na posição a,1 e ele podendo mover apenas duas vezes pra cima e uma vez pra direita  fazendo um L                  
                 posY = 1;
                 posX = 'a';
                 printf("Quantas casas deseja andar com O Cavalo ?");
@@ -76,9 +76,9 @@ int main(){
                         int cavalo = move;
                         while (cavalo--){
                             for (int i=0;i < 2; i++){
-                                printf("Cima, %c,%d.\n", ++posX, posY);
+                                printf("Cima, %c,%d.\n", posX, ++posY);
                             }
-                            printf("Direita %c,%d.\n", posX, ++posY);
+                            printf("Direita %c,%d.\n", ++posX, posY);
                         }
                         
                     }else {
