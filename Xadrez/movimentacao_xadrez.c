@@ -3,8 +3,8 @@
 int main(){
 
 
-    int opcao, move, posX;
-    char posY;
+    int opcao, move, posY;
+    char posX;
     /*
     Menu Interativo;
     Escolhe a peça e danda com ela; 
@@ -15,7 +15,8 @@ int main(){
         printf("1 - Torre\n");
         printf("2 - Bispo\n");
         printf("3 - Rainha\n");
-        printf("4 - sair do jogo\n");
+        printf("4 - Cavalo\n");
+        printf("5 - sair do jogo\n");
         printf("escolha: ");
         scanf("%d", &opcao);
 
@@ -64,16 +65,37 @@ int main(){
                         printf("Opção invalida.\n");
                     }
                 break;
-            case 4:
+
+                case 4:
+                // considerando o cavalo começando na posição a,1 e ela podendo mover em L , duas vezes pra cima e uma vez pra direita                     
+                posY = 1;
+                posX = 'a';
+                printf("Quantas casas deseja andar com O Cavalo ?");
+                scanf("%d", &move);
+                    if (move<8){    
+                        int cavalo = move;
+                        while (cavalo--){
+                            for (int i=0;i < 2; i++){
+                                printf("Cima, %c,%d.\n", ++posX, posY);
+                            }
+                            printf("Direita %c,%d.\n", posX, ++posY);
+                        }
+                        
+                    }else {
+                        printf("Opção invalida.\n");
+                    }
+                break;
+
+            case 5:
                 printf("Saindo do jogo.\n");
                 break;
             default :    
             printf("Opção invalida\n");
         }
-    }while (opcao != 4);
-    {
+    }while (opcao != 5);
+    
         printf("Obrigado por jogar.\n");
-    }
+    
     
 
     return 0;
