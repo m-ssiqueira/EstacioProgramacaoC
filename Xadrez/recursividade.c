@@ -2,9 +2,10 @@
 
 void recursividade (int numero){
     if (numero > 0){
-        printf("%d\n", numero);
 
-        recursividade(numero - 1);
+                recursividade(numero - 1);
+        printf("%d\n", numero);  // nesse exemplo mostra que se eu mudar as linhas de lugar o resultado é diferente.
+
     }
 }
 
