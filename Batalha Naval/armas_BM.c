@@ -29,7 +29,7 @@ int main(){
 }
 */
 
-/*
+
 #include <stdio.h>
 
 #define linha  3
@@ -59,19 +59,21 @@ int main(){
     }
 
 }
-    */
+
+
+/*  --== CRUZ ==--
 
 #include <stdio.h>
 
 int main() {
-    int linha = 7;
-    int coluna = 9;
+    int linha = 3;
+    int coluna = 5;
     int matriz[linha][coluna];
 
     for (int i = 0; i < linha; i++) {
         for (int j = 0; j < coluna; j++) {
             if ((i <= j && j == (coluna/2)) ||           // topo
-                (i == (linha/2) && (j > 0 && (j+1) < coluna)) || // linha do meio- && (j >= 1 && j <= 3)
+                (i == (linha/2) && (j > 0 && (j+1) < coluna)) || // linha do meio
                 (i >= j && j == (coluna/2))) {           // base
                 matriz[i][j] = 3;
             } else {
@@ -91,3 +93,4 @@ int main() {
     return 0;
 }
 
+*/
